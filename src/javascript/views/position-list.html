@@ -1,0 +1,59 @@
+<div class="box position-list">
+    <div class="box-header with-border">
+      <h3 class="box-title">
+        <button id="addbtn" class="btn btn-block btn-success"><span class="fa fa-plus-circle"></span> 添加</button>
+      </h3>
+      <div class="box-tools">
+        <div class="input-group input-group-sm" style="width: 150px;">
+          <input type="text" id="keywords" value="" name="pos_search" class="form-control pull-right" placeholder="搜索">
+  
+          <div class="input-group-btn">
+            <button type="button" id="possearch" class="btn btn-default"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <table class="table table-bordered position-list__tabel">
+        <tr>
+          <th style="width: 10px">#</th>
+          <th>图片</th>
+          <th>书名</th>
+          <th>作者</th>
+          <th>类型</th>
+          <th style="width: 140px">操作</th>
+        </tr>
+        {{each data.res}}
+
+        <tr>
+          <td>{{$index+1}}</td>
+          <td><img width="50" height="50" src='http://localhost:3000/{{$value.logo}}'></td>
+          <td>{{$value.bookname}} {{$value.logo}}</td>
+          <td>{{$value.author}}</td>
+          <td>{{$value.type}}</td>
+          <input type="hidden" id={{$value._id}}>
+          <td>
+            <button class="btn btn-sm btn-primary pos-update alterbtn" bookid={{$value._id}} id="changebtn" pageno="" keywords=""><span class="fa fa-edit"></span>
+              修改</button>
+            <button class="btn btn-sm btn-danger pos-remove delbtn" bookid={{$value._id}} id='delbtn' posid="" pageno="" pagecount="" pagesize="" keywords=""
+              filename=""><span class="fa fa-remove"></span> 删除</button>
+          </td>
+        </tr>
+        {{/each}}
+        <!-- <tr>
+          <td colspan="8"> 暂无数据. </td>
+        </tr> -->
+      </table>
+    </div>
+    <div class="box-footer clearfix">
+      <ul class="pagination pagination-sm no-margin pull-right">
+        <li><a href="#/position-list?pagenum={{~~data.pagenum==1?1:~~data.pagenum-1}}">&laquo;</a></li>
+        <% for(var i =0 ; i < data.allpage ; i++){ %>
+        <li {{if data.pagenum==i+1 }}class="active pagenum" {{/if}} ><a href="#/position-list?pagenum={{i+1}}"><%= i+1%></a></li>
+        <% } %>
+        <li ><a  href="#/position-list?pagenum={{~~data.pagenum==~~data.allpage?~~data.pagenum:~~data.pagenum+1}}">&raquo;</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- /.box -->
