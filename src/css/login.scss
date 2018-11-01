@@ -1,0 +1,54 @@
+body {
+    background-color: #808080;
+    margin: 0;
+    #login {
+        width: 500px;
+        height: 336px;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background: url('../../static/img/book.jpg') no-repeat;
+        border-radius: 6px;
+        .signin_title {
+            overflow: hidden;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            padding: 15px;
+            border-bottom: 1px solid #e5e5e5;
+            min-height: 16px;
+            box-sizing: border-box;
+            h4 {
+                margin: 0;
+                line-height: 25px;
+            }
+        }
+        .signin_body {
+            position: relative;
+            padding: 15px;
+            display: block;
+            .signin_content {
+                position: relative;
+                margin: 0;
+                .signin_wrap {
+                    padding: 0 140px 0 35px;
+                }
+            }
+        }
+        .signup_body {
+            position: relative;
+            padding: 15px 0;
+            display: none;
+            .signup_content {
+                position: relative;
+                margin: 0;
+                .signup_wrap {
+                    padding: 0 140px 0 35px;
+                }
+            }
+        }
+    }
+}

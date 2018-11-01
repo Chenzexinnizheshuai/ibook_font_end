@@ -4,7 +4,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 module.exports = {
     mode: 'development',//此配置可以保证用webpack打包后的文件不是压缩版本的
     entry: {
-        main: './src/javascript/app.js'
+        main: ['./src/javascript/app.js'],
+        login: ['./src/javascript/login.js']
     },
     output: {
         path: path.resolve(__dirname,'../dev'),
@@ -27,7 +28,13 @@ module.exports = {
         //如果是多页面操作就new多个实例就可以了
         new HtmlWebpackPlugin({
             template:'./src/index.html',
-            filename:'index.html'
+            filename:'index.html',
+            chunks: ['main']
+        }),
+        new HtmlWebpackPlugin({
+            template:'./src/login.html',
+            filename:'login.html',
+            chunks: ['login']
         }),
         new CopyWebpackPlugin([{
             from: path.resolve(__dirname, '../static'),
