@@ -36,14 +36,6 @@ var listone = (id)=>{
 }
 //更改一条数据
 var updata = (data)=>{
-    // return $.ajax({
-    //     type : 'POST',
-    //     data : {...data},
-    //     url : 'api/1/position/updata',
-    //     success : (data)=>{
-    //         return data
-    //     }
-    // })
     return new Promise((resolve)=>{
         $('#up-form').ajaxSubmit({
             type : 'POST',
@@ -58,10 +50,23 @@ var updata = (data)=>{
     
     }) 
 }
+//搜索功能
+const search = (data)=>{
+    return $.ajax({
+        url : 'api/1/position/search',
+        data : {key:data},
+        success : (data)=>{
+            console.log(data);
+            return data
+        }
+    })
+
+}
 
 export default {
     list,
     del,
     listone,
-    updata
+    updata,
+    search
 }

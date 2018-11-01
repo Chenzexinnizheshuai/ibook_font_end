@@ -4,12 +4,15 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 module.exports = {
     mode: 'development',//此配置可以保证用webpack打包后的文件不是压缩版本的
     entry: {
-        main: './src/javascript/app.js'
+        main: './src/javascript/app.js',
+        admin: ['./src/javascript/admin.js'],
+        login: ['./src/javascript/login.js'],
+        map : ['./src/javascript/map.js']
+        
     },
     output: {
         path: path.resolve(__dirname,'../dev'),
         filename: '[name].js',
-    
     },
     devServer: {
         //以下两项配置可以让我们能够在浏览器路径上直接访问以下文件夹我们的文件
@@ -27,7 +30,24 @@ module.exports = {
         //如果是多页面操作就new多个实例就可以了
         new HtmlWebpackPlugin({
             template:'./src/index.html',
-            filename:'index.html'
+            filename:'index.html',
+            chunks: ['main']
+        }),
+        new HtmlWebpackPlugin({
+            template:'./src/admin.html',
+            filename:'admin.html',
+            chunks: ['admin']
+        }),
+        new HtmlWebpackPlugin({
+            template:'./src/login.html',
+            filename:'login.html',
+            chunks: ['login']
+        }),
+        new HtmlWebpackPlugin({
+            template:'./src/map.html',
+            filename:'map.html',
+            chunks : ['map']
+            
         }),
         new CopyWebpackPlugin([{
             from: path.resolve(__dirname, '../static'),

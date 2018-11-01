@@ -7,7 +7,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>拉钩</b>网</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>拉勾网</b>管理系统</span>
+      <span class="logo-lg"><b>ibook</b>管理系统</span>
     </a>
 
     <!-- Header Navbar -->
@@ -121,39 +121,23 @@
               <!-- The user image in the navbar-->
               <img src="/static/libs/adminLTE/images/user2-160x160.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs myname" class="">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
                 <img src="/static/libs/adminLTE/images/user2-160x160.jpg" class="img-circle" alt="User Image">
 
-                <p>
+                <p class="myname">
                   Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  
                 </p>
               </li>
               <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">花朵</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">销量</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">好友</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">设置</a>
-                </div>
-                <div class="pull-right">
+
+                <div class="pull-right exitbtn">
                   <a href="#" class="btn btn-default btn-flat">退出</a>
                 </div>
               </li>
@@ -179,7 +163,7 @@
           <img src="/static/libs/adminLTE/images/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p class="myname">Alexander Pierce</p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
         </div>
@@ -201,20 +185,9 @@
       <ul class="sidebar-menu">
         <li class="header">菜单</li>
         <!-- Optionally, you can add icons to the links -->
-        <li to="/home"><a href="javascript:void(0)"><i class="fa fa-link"></i> <span>首页</span></a></li>
-        <li to="/position-list?pagenum=1"><a href="javascript:void(0)"><i class="fa fa-link"></i> <span>职位信息</span></a></li>
-        <li class="active treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">仪表盘</font></font></span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="index.html"><i class="fa fa-circle-o"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 仪表盘v1</font></font></a></li>
-            <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 仪表盘v2</font></font></a></li>
-          </ul>
-        </li>
+        <li to="/home" act="/home"><a href="javascript:void(0)"><i class="fa fa-link"></i> <span>首页</span></a></li>
+        <li to="/position-list?pagenum=1" act="/position-list"><a href="javascript:void(0)"><i class="fa fa-link"></i> <span>职位信息</span></a></li>
+        <li to="/map" class="map"><a href="javascript:void(0)"><i class="fa fa-link"></i> <span>本店位置和路线</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -227,16 +200,12 @@
     <section class="content-header">
       <h1>
         Page Header
-        <small>Optional description</small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
+   
     </section>
 
     <!-- Main content -->
-    <section class="content" id="router-view">
+    <section class="content" id="router-view" style=" min-height: 800px;">
 
       <!-- Your Page Content Here -->
       
@@ -244,7 +213,7 @@
       <p>│Esc│   │ F1│ F2│ F3│ F4│ │ F5│ F6│ F7│ F8│ │ F9│F10│F11│F12│ │P/S│S L│P/B│  ┌┐    ┌┐    ┌┐ </p>
       <p>└───┘   └───┴───┴───┴───┘ └───┴───┴───┴───┘ └───┴───┴───┴───┘ └───┴───┴───┘  └┘    └┘    └┘ </p>
       <p>┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐ ┌───┬───┬───┐ ┌───┬───┬───┬───┐ </p>
-      <p>│~ `│! 1│@ 2│# 3│$ 4│% 5│^ 6│& 7│* 8│( 9│) 0│_ -│+ =│ BacSp │ │Ins│Hom│PUp│ │N L│ / │ * │ - │ </p>
+      <p>│~ `│! 1│@ 2│# 3│$ 4│% 5│^ 6│& 7 8│( 9│) 0│_ -│+ =│ BacSp │ │Ins│Hom│PUp│ │N L│ / │ │ - │ </p>
       <p>├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤ ├───┼───┼───┤ ├───┼───┼───┼───┤ </p>
       <p>│ Tab │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │{ [│} ]│ | \ │ │Del│End│PDn│ │ 7 │ 8 │ 9 │   │ </p>
       <p>├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤ └───┴───┴───┘ ├───┼───┼───┤ + │ </p>
@@ -255,7 +224,94 @@
       <p>│ Ctrl│    │Alt │         Space         │ Alt│    │    │Ctrl│ │ ← │ ↓ │ → │ │   0   │ . │←─┘│ </p>
       <p>└─────┴────┴────┴───────────────────────┴────┴────┴────┴────┘ └───┴───┴───┘ └───────┴───┴───┘ </p>
 
-
+             
+                           _ooOoo_
+                          o8888888o
+                          88" . "88
+                          (| -_- |)
+                          O\  =  /O
+                       ____/`---'\____
+                     .'  \\|     |//  `.
+                    /  \\|||  :  |||//  \
+                   /  _||||| -:- |||||-  \
+                   |   | \\\  -  /// |   |
+                   | \_|  ''\---/''  |   |
+                   \  .-\__  `-`  ___/-. /
+                 ___`. .'  /--.--\  `. . __
+              ."" '<  `.___\_<|>_/___.'  >'"".
+             | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+             \  \ `-.   \_ __\ /__ _/   .-` /  /
+        ======`-.____`-.___\_____/___.-`____.-'======
+                           `=---='
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 佛祖保佑       永无BUG
+       
+                           _ooOoo_
+                          o8888888o
+                          88" . "88
+                          (| -_- |)
+                          O\  =  /O
+                       ____/`---'\____
+                     .'  \\|     |//  `.
+                    /  \\|||  :  |||//  \
+                   /  _||||| -:- |||||-  \
+                   |   | \\\  -  /// |   |
+                   | \_|  ''\---/''  |   |
+                   \  .-\__  `-`  ___/-. /
+                 ___`. .'  /--.--\  `. . __
+              ."" '<  `.___\_<|>_/___.'  >'"".
+             | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+             \  \ `-.   \_ __\ /__ _/   .-` /  /
+        ======`-.____`-.___\_____/___.-`____.-'======
+                           `=---='
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 佛祖保佑       永无BUG
+       
+                           _ooOoo_
+                          o8888888o
+                          88" . "88
+                          (| -_- |)
+                          O\  =  /O
+                       ____/`---'\____
+                     .'  \\|     |//  `.
+                    /  \\|||  :  |||//  \
+                   /  _||||| -:- |||||-  \
+                   |   | \\\  -  /// |   |
+                   | \_|  ''\---/''  |   |
+                   \  .-\__  `-`  ___/-. /
+                 ___`. .'  /--.--\  `. . __
+              ."" '<  `.___\_<|>_/___.'  >'"".
+             | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+             \  \ `-.   \_ __\ /__ _/   .-` /  /
+        ======`-.____`-.___\_____/___.-`____.-'======
+                           `=---='
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 佛祖保佑       永无BUG
+                 
+                      
+                          ┌─┐       ┌─┐
+                       ┌──┘ ┴───────┘ ┴──┐
+                       │                 │
+                       │       ───       │
+                       │  ─┬┘       └┬─  │
+                       │                 │
+                       │       ─┴─       │
+                       │                 │
+                       └───┐         ┌───┘
+                           │         │
+                           │         │
+                           │         │
+                           │         └──────────────┐
+                           │                        │
+                           │                        ├─┐
+                           │                        ┌─┘    
+                           │                        │
+                           └─┐  ┐  ┌───────┬──┐  ┌──┘         
+                             │ ─┤ ─┤       │ ─┤ ─┤         
+                             └──┴──┘       └──┴──┘ 
+                                 神兽保佑 
+                                 代码无BUG! 
+                 
     </section>
     <!-- /.content -->
   </div>

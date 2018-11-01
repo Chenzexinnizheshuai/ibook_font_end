@@ -3,15 +3,7 @@
       <h3 class="box-title">
         <button id="addbtn" class="btn btn-block btn-success"><span class="fa fa-plus-circle"></span> 添加</button>
       </h3>
-      <div class="box-tools">
-        <div class="input-group input-group-sm" style="width: 150px;">
-          <input type="text" id="keywords" value="" name="pos_search" class="form-control pull-right" placeholder="搜索">
-  
-          <div class="input-group-btn">
-            <button type="button" id="possearch" class="btn btn-default"><i class="fa fa-search"></i></button>
-          </div>
-        </div>
-      </div>
+     
     </div>
     <!-- /.box-header -->
     <div class="box-body">
@@ -29,7 +21,7 @@
         <tr>
           <td>{{$index+1}}</td>
           <td><img width="50" height="50" src='http://localhost:3000/{{$value.logo}}'></td>
-          <td>{{$value.bookname}} {{$value.logo}}</td>
+          <td>{{$value.bookname}}</td>
           <td>{{$value.author}}</td>
           <td>{{$value.type}}</td>
           <input type="hidden" id={{$value._id}}>

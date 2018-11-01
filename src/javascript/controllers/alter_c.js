@@ -21,7 +21,9 @@ const bindEvent = () =>{
             bus.emit('back')
         }
     })
-
+    $('#back').click(()=>{
+        bus.emit('back')
+    })
 }
 
 export default {alter}
