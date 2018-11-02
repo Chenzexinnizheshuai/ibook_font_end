@@ -1,6 +1,15 @@
 body {
-    background-color: #808080;
     margin: 0;
+    #body_box {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        background: url('../../static/img/book-library.jpg') no-repeat;
+        filter: blur(5px);
+    }
     #login {
         width: 500px;
         height: 336px;
@@ -13,6 +22,7 @@ body {
         margin: auto;
         background: url('../../static/img/book.jpg') no-repeat;
         border-radius: 6px;
+
         .signin_title {
             overflow: hidden;
             border-top-left-radius: 6px;
@@ -21,30 +31,37 @@ body {
             border-bottom: 1px solid #e5e5e5;
             min-height: 16px;
             box-sizing: border-box;
+
             h4 {
                 margin: 0;
                 line-height: 25px;
             }
         }
+
         .signin_body {
             position: relative;
             padding: 15px;
             display: block;
+
             .signin_content {
                 position: relative;
                 margin: 0;
+
                 .signin_wrap {
                     padding: 0 140px 0 35px;
                 }
             }
         }
+
         .signup_body {
             position: relative;
             padding: 15px 0;
             display: none;
+
             .signup_content {
                 position: relative;
                 margin: 0;
+
                 .signup_wrap {
                     padding: 0 140px 0 35px;
                 }
